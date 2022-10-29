@@ -1,0 +1,67 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+.navbar-dark{
+    background-color: #145595 !important;
+
+}
+
+.fill-remaining-space {
+    flex: 1 1 auto;
+}
+
+.text-orange {
+    color: orange;
+}
+
+body {
+    background-color: #F0F0F0;
+    margin: 0; 
+}
+
+.menu-spacer {
+    width: 15px;
+}
+
+
+.text-yellow {
+    color: yellow !important;
+}
+
+.border-yellow {
+    border-color: yellow;
+    border-width: 2px;
+}
+
+.text-orange {
+    color: orange;
+}
+
+.text-gray {
+    color: grey;
+}
+
+.bg-light-blue {
+    background-color: #daddf2;
+}
+
+.title {
+    font-size: 150% !important;
+    font-weight: bolder;
+}
+
+.strong {
+    font-size: 110% !important;
+    font-weight: bold;
+}
+
+.accordion-button {
+    background-color: lightgray !important;
+    color: #0c63e4;
+}
+
+.accordion-item {
+    background-color: whitesmoke;
+}
