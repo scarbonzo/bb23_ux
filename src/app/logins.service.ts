@@ -19,7 +19,7 @@ export class LoginsService {
     endpoint = endpoint + '&start=' + start.toISOString() + '&end=' + end.toISOString();
     endpoint = endpoint + '&startups=' + startups + '&shutdowns=' + shutdowns + '&crashes=' + crashes + '&renames=' + renames;
     endpoint = endpoint + '&logons=' + logons + '&logoffs=' + logoffs + '&locks=' + locks + '&unlocks=' + unlocks;
-    endpoint = endpoint + '&take=' + take + '&skip=' + skip;
+    endpoint = endpoint + '&take=' + take + '&skip=' + skip + '&desc=true';
     return this.httpClient.get(this.baseUrl + endpoint);
   }
 
@@ -32,7 +32,7 @@ export class LoginsService {
     endpoint = endpoint + '&start=' + start.toISOString() + '&end=' + end.toISOString();
     endpoint = endpoint + '&startups=' + 'true' + '&shutdowns=' + 'true' + '&crashes=' + 'true' + '&renames=' + 'true';
     endpoint = endpoint + '&logons=' + logons + '&logoffs=' + logoffs + '&locks=' + locks + '&unlocks=' + unlocks;
-    endpoint = endpoint + '&take=' + take + '&skip=' + skip;
+    endpoint = endpoint + '&take=' + take + '&skip=' + skip + '&desc=true';
     return this.httpClient.get(this.baseUrl + endpoint);
   }
 }
