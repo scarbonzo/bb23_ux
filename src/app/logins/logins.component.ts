@@ -15,7 +15,7 @@ export class LoginsComponent implements OnInit {
   unlocks = true;
   start = new Date(new Date().getUTCFullYear(), new Date().getUTCMonth(), new Date().getUTCDate()-7);
   end = new Date(new Date().getUTCFullYear(), new Date().getUTCMonth(), new Date().getUTCDate(), 23, 59, 59);
-  take = 100;
+  take = 25;
   skip = 0;
 
   constructor(private loginsService: LoginsService) { }

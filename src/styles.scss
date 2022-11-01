@@ -5,7 +5,6 @@
 
 .navbar-dark{
     background-color: #145595 !important;
-
 }
 
 .fill-remaining-space {
@@ -18,7 +17,7 @@
 
 body {
     background-color: #F0F0F0;
-    margin: 0; 
+    font-family: 'Roboto', sans-serif;
 }
 
 .menu-spacer {
@@ -58,10 +57,13 @@ body {
 }
 
 .accordion-button {
-    background-color: lightgray !important;
-    color: #0c63e4;
+    background-color: gainsboro !important;
 }
 
 .accordion-item {
-    background-color: whitesmoke;
+    background-color: ghostwhite;
 }
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+    background-color: gainsboro;
+ }

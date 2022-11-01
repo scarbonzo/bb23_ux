@@ -1,98 +1,106 @@
 <div class="accordion" id="accordionPanelsStayOpenExample">
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headerOptions">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelOptions" aria-expanded="true" aria-controls="panelOptions">
-          Search Options
-        </button>
-      </h2>
-      <div id="panelOptions" class="accordion-collapse collapse show" aria-labelledby="panelOptions">
-        <div class="accordion-body">
-            <form>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headerOptions">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelOptions" aria-expanded="true" aria-controls="panelOptions">
+        Search Options
+      </button>
+    </h2>
+    <div id="panelOptions" class="accordion-collapse collapse show" aria-labelledby="panelOptions">
+      <div class="accordion-body">
+          <form>
+            <div class="form-group row">
+              <div class="col-5">
                 <div class="row g-5 align-items-center">
-                    <div class="col-1">
-                        <label for="search" class="form-label">Search</label>
-                    </div>
-                    <div class="col-auto">
-                        <input id="start" class="form-control" placeholder="Username or machine..." name="search" [(ngModel)]="search" aria-describedby="searchhelp">
-                    </div>
-                    <div class="col-auto">
-                        <div id="searchhelp" class="form-text">Search is not case sensitive.</div>
-                    </div>
+                  <div class="col-2">
+                      <label for="search" class="form-label">Search</label>
                   </div>
-                  <br />
-                  <div class="row g-5 align-items-center">
-                    <div class="col-1">
-                        <label for="start" class="form-label">Start</label>
-                    </div>
-                    <div class="col-auto">
-                        <input type="date" id="start" class="form-control" name="start" [ngModel] ="start | date:'yyyy-MM-dd'" (ngModelChange)="start=parseStartDate($event)" aria-describedby="starthelp" />
-                    </div>
-                    <div class="col-auto">
-                        <div id="starthelp" class="form-text">Start of timeframe to search within</div>
-                    </div>
+                  <div class="col-5">
+                      <input id="start" class="form-control" placeholder="Username or machine..." name="search" [(ngModel)]="search" aria-describedby="searchhelp">
                   </div>
-                  <div class="row g-5 align-items-center">
-                    <div class="col-1">
-                        <label for="end" class="form-label">End</label>
-                    </div>
-                    <div class="col-auto">
-                        <input type="date" id="end" class="form-control" name="end" [ngModel] ="end | date:'yyyy-MM-dd'" (ngModelChange)="end=parseEndDate($event)" aria-describedby="endhelp" />
-                    </div>
-                    <div class="col-auto">
-                        <div id="endhelp" class="form-text">End of timeframe to search within</div>
-                    </div>
+                  <div class="col-5">
+                      <div id="searchhelp" class="form-text">Search is not case sensitive.</div>
                   </div>
-                  <br />
-                  <div class="form-group">
-                    <div class="form-check">
-                      <input class="form-check-input" name="logons" type="checkbox" [(ngModel)]="logons">
-                      <label class="form-check-label" for="logons">
-                        Show Logons
-                      </label>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="form-check">
-                      <input class="form-check-input" name="logoffs" type="checkbox" [(ngModel)]="logoffs">
-                      <label class="form-check-label" for="logoffs">
-                        Show Logoffs
-                      </label>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="form-check">
-                      <input class="form-check-input" name="unlocks" type="checkbox" [(ngModel)]="unlocks">
-                      <label class="form-check-label" for="unlocks">
-                        Show Unlocks
-                      </label>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="form-check">
-                      <input class="form-check-input" name="locks" type="checkbox" [(ngModel)]="locks">
-                      <label class="form-check-label" for="locks">
-                        Show Locks
-                      </label>
-                    </div>
-                  </div>
-                  <br />
-                  <div class="row g-5 align-items-center">
-                    <div class="col-1">
-                        <label for="end" class="form-label">Results</label>
-                    </div>
-                    <div class="col-auto">
-                        <input type="number" min="1" step="1" class="form-control" name="take" [(ngModel)]="take" aria-describedby="takehelp" />
-                    </div>
-                    <div class="col-auto">
-                        <div id="takehelp" class="form-text">Limit the amount of search results</div>
-                    </div>
-                  </div>
+                </div>
                 <br />
-                <button type="submit" class="btn btn-primary" (click)="update()" (keyup.enter)="update()">Submit</button>
-            </form>
-        </div>
+                <div class="row g-5 align-items-center">
+                  <div class="col-2">
+                      <label for="start" class="form-label">Start</label>
+                  </div>
+                  <div class="col-4">
+                      <input type="date" id="start" class="form-control" name="start" [ngModel] ="start | date:'yyyy-MM-dd'" (ngModelChange)="start=parseStartDate($event)" aria-describedby="starthelp" />
+                  </div>
+                  <div class="col-6">
+                      <div id="starthelp" class="form-text">Start of timeframe to search within</div>
+                  </div>
+                </div>
+                <div class="row g-5 align-items-center">
+                  <div class="col-2">
+                      <label for="end" class="form-label">End</label>
+                  </div>
+                  <div class="col-4">
+                      <input type="date" id="end" class="form-control" name="end" [ngModel] ="end | date:'yyyy-MM-dd'" (ngModelChange)="end=parseEndDate($event)" aria-describedby="endhelp" />
+                  </div>
+                  <div class="col-6">
+                      <div id="endhelp" class="form-text">End of timeframe to search within</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2">
+                <div class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" name="logons" type="checkbox" [(ngModel)]="logons">
+                    <label class="form-check-label" for="logons">
+                      Show Logons
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" name="logoffs" type="checkbox" [(ngModel)]="logoffs">
+                    <label class="form-check-label" for="logoffs">
+                      Show Logoffs
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" name="unlocks" type="checkbox" [(ngModel)]="unlocks">
+                    <label class="form-check-label" for="unlocks">
+                      Show Unlocks
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" name="locks" type="checkbox" [(ngModel)]="locks">
+                    <label class="form-check-label" for="locks">
+                      Show Locks
+                    </label>
+                  </div>
+                </div>
+                <br />
+                
+              </div>
+              <div class="col-5">
+                <div class="row g-5 align-items-center">
+                  <div class="col-1">
+                      <label for="end" class="form-label">Results</label>
+                  </div>
+                  <div class="col-2">
+                      <input type="number" min="1" step="1" class="form-control" name="take" [(ngModel)]="take" aria-describedby="takehelp" />
+                  </div>
+                  <div class="col-auto">
+                      <div id="takehelp" class="form-text">Limit the amount of search results</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary" (click)="update()" (keyup.enter)="update()">Submit</button>
+          </form>
       </div>
     </div>
+  </div>
 </div>
 <br />
 <div class="accordion" id="accordionPanelsStayOpenExample">
@@ -104,15 +112,15 @@
         </h2>
         <div id="panelResults" class="accordion-collapse collapse show" aria-labelledby="panelResults">
           <div class="accordion-body">
-            <table class="table table-sm table-striped table-hover">
+            <table class="table table-sm table-striped">
                 <thead class="thead-dark">
                     <tr>
                         <th class="col-2">Timestamp</th>
                         <th class="col-2">Machine</th>
-                        <th class="col-2">Username</th>
+                        <th class="col-1">Username</th>
                         <th class="col-1">Type</th>
                         <th class="col-2">Network</th>
-                        <th class="col-2">DC</th>
+                        <th class="col">DC</th>
                     </tr>
                 </thead>
                 <tbody>
