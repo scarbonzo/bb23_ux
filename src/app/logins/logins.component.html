@@ -111,7 +111,7 @@
                         <th class="col-2">Machine</th>
                         <th class="col-2">Username</th>
                         <th class="col-1">Type</th>
-                        <th class="col-2">Gateway</th>
+                        <th class="col-2">Network</th>
                         <th class="col-2">DC</th>
                     </tr>
                 </thead>
@@ -120,8 +120,8 @@
                     <td>{{event.timestamp | date: 'medium'}}</td>
                     <td>{{event.machine.toUpperCase()}}</td>
                     <td>{{event.username.toLowerCase()}}</td>
-                    <td>{{event.loginType}}</td>
-                    <td>{{event.gateway}}</td>
+                    <td>{{event.loginTypeName}}</td>
+                    <td>{{event.networkName}} [{{event.gateway}}]</td>
                     <td>{{event.domainController.toUpperCase()}}</td>
                     </tr>
                 </tbody>
