@@ -8,12 +8,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginsComponent } from './logins/logins.component';
 import { HttpClientModule } from '@angular/common/http';
+import { IoboardComponent } from './ioboard/ioboard.component';
+import { IoeditorComponent } from './ioeditor/ioeditor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    LoginsComponent
+    LoginsComponent,
+    IoboardComponent,
+    IoeditorComponent
   ],
   imports: [
     BrowserModule,

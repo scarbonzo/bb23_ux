@@ -1,0 +1,105 @@
+<div class="accordion col-3" id="accordionPanelsStayOpenExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headerOptions">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelOptions" aria-expanded="true" aria-controls="panelOptions">
+          Create a new User
+        </button>
+      </h2>
+      <div id="panelOptions" class="accordion-collapse collapse show" aria-labelledby="panelOptions">
+        <div class="accordion-body">
+            <form #userForm="ngForm">
+                <div class="form-group">
+                    <div class="row g-2 align-items-center">
+                        <div class="col-4">
+                            <label for="name">Username</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" class="form-control" id="username"
+                                required
+                                [(ngModel)]="model.username" name="username">
+                        </div>
+
+                        <div class="col-4">
+                            <label for="firstName">First Name</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" class="form-control" id="firstName"
+                                required
+                                [(ngModel)]="model.firstName" name="firstName">
+                        </div>
+                        
+                        <div class="col-4">
+                            <label for="group">Group</label>
+                        </div>
+                        <div class="col-8">
+                            <select class="form-control"  id="group"
+                                required
+                                [(ngModel)]="model.group" name="group">
+                                <option *ngFor="let g of groups" [value]="g">{{g}}</option>
+                            </select>
+                        </div>
+
+                        <div class="col-4">
+                            <label for="group">Monday</label>
+                        </div>
+                        <div class="col-8">
+                            <select class="form-control {{model.monday}}"  id="monday"
+                                required
+                                [(ngModel)]="model.monday" name="monday">
+                                <option *ngFor="let s of statuses" [value]="s">{{s}}</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-4">
+                            <label for="group">Tuesday</label>
+                        </div>
+                        <div class="col-8">
+                            <select class="form-control {{model.tuesday}}" id="tuesday"
+                                required
+                                [(ngModel)]="model.tuesday" name="tuesday">
+                                <option *ngFor="let s of statuses" [value]="s">{{s}}</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-4">
+                            <label for="group">Wednesday</label>
+                        </div>
+                        <div class="col-8">
+                            <select class="form-control {{model.wednesday}}" id="wednesday"
+                                required
+                                [(ngModel)]="model.wednesday" name="wednesday">
+                                <option *ngFor="let s of statuses" [value]="s">{{s}}</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-4">
+                            <label for="group">Thursday</label>
+                        </div>
+                        <div class="col-8">
+                            <select class="form-control {{model.thursday}}" id="thursday"
+                                required
+                                [(ngModel)]="model.thursday" name="thursday">
+                                <option *ngFor="let s of statuses" [value]="s">{{s}}</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-4">
+                            <label for="group">Friday</label>
+                        </div>
+                        <div class="col-8">
+                            <select class="form-control {{model.friday}}" id="friday"
+                                required
+                                [(ngModel)]="model.friday" name="friday">
+                                <option *ngFor="let s of statuses" [value]="s">{{s}}</option>
+                            </select>
+                        </div>
+                        <div class="row"><br /></div>
+                        <button type="button" class="col-4 btn btn-primary" (click)="createUser()">Create User</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  <br />
+  {{ model | json }}

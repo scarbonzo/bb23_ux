@@ -1,0 +1,77 @@
+<br />
+<div class="row">
+    <div class="col-6">
+        <table class="table table-bordered">
+            <thead>
+                <tr >
+                    <th class="col col-1">Core</th>
+                    <th class="col col-2">Monday</th>
+                    <th class="col col-2">Tuesday</th>
+                    <th class="col col-2">Wednesday</th>
+                    <th class="col col-2">Thursday</th>
+                    <th class="col col-2">Friday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let member of coreusers">
+                    <td class="name">{{member.firstName}}</td>
+                    <td [ngClass]="dayOfWeekName === 'Monday' ? 'today' : ''" class="{{member.monday}}">{{member.monday}}</td>
+                    <td [ngClass]="dayOfWeekName === 'Tuesday' ? 'today' : ''" class="{{member.tuesday}}">{{member.tuesday}}</td>
+                    <td [ngClass]="dayOfWeekName === 'Wednesday' ? 'today' : ''" class="{{member.wednesday}}">{{member.wednesday}}</td>
+                    <td [ngClass]="dayOfWeekName === 'Thursday' ? 'today' : ''" class="{{member.thursday}}">{{member.thursday}}</td>
+                    <td [ngClass]="dayOfWeekName === 'Friday' ? 'today' : ''" class="{{member.friday}}">{{member.friday}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col-6">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th class="col col-1">Web</th>
+                    <th class="col col-2">Monday</th>
+                    <th class="col col-2">Tuesday</th>
+                    <th class="col col-2">Wednesday</th>
+                    <th class="col col-2">Thursday</th>
+                    <th class="col col-2">Friday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let member of webusers">
+                    <td class="name">{{member.firstName}}</td>
+                    <td [ngClass]="dayOfWeekName === 'Monday' ? 'today' : ''" class="{{member.monday}}">{{member.monday}}</td>
+                    <td [ngClass]="dayOfWeekName === 'Tuesday' ? 'today' : ''" class="{{member.tuesday}}">{{member.tuesday}}</td>
+                    <td [ngClass]="dayOfWeekName === 'Wednesday' ? 'today' : ''" class="{{member.wednesday}}">{{member.wednesday}}</td>
+                    <td [ngClass]="dayOfWeekName === 'Thursday' ? 'today' : ''" class="{{member.thursday}}">{{member.thursday}}</td>
+                    <td [ngClass]="dayOfWeekName === 'Friday' ? 'today' : ''" class="{{member.friday}}">{{member.friday}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th class="col col-1">Multi's</th>
+                    <th class="col col-2">Monday</th>
+                    <th class="col col-2">Tuesday</th>
+                    <th class="col col-2">Wednesday</th>
+                    <th class="col col-2">Thursday</th>
+                    <th class="col col-2">Friday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let member of multiusers">
+                    <td class="name">{{member.firstName}}</td>
+                    <td [ngClass]="dayOfWeekName === 'Monday' ? 'today' : ''" class="{{member.monday}}">{{member.monday}}</td>
+                    <td [ngClass]="dayOfWeekName === 'Tuesday' ? 'today' : ''" class="{{member.tuesday}}">{{member.tuesday}}</td>
+                    <td [ngClass]="dayOfWeekName === 'Wednesday' ? 'today' : ''" class="{{member.wednesday}}">{{member.wednesday}}</td>
+                    <td [ngClass]="dayOfWeekName === 'Thursday' ? 'today' : ''" class="{{member.thursday}}">{{member.thursday}}</td>
+                    <td [ngClass]="dayOfWeekName === 'Friday' ? 'today' : ''" class="{{member.friday}}">{{member.friday}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+<button class="col-2 btn btn-primary" [routerLink]="'/ioeditor'">Create New User</button>

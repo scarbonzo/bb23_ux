@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { IoboardComponent } from './ioboard/ioboard.component';
+import { IoeditorComponent } from './ioeditor/ioeditor.component';
 import { LoginsComponent } from './logins/logins.component';
 
 const routes: Routes = [
@@ -11,6 +13,15 @@ const routes: Routes = [
   {
     path: 'logins',
     component: LoginsComponent
+  },
+  {
+    path: 'ioboard',
+    component: IoboardComponent
+  }
+  ,
+  {
+    path: 'ioeditor',
+    component: IoeditorComponent
   }
 ];
 
