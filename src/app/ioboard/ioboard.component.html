@@ -14,12 +14,27 @@
             </thead>
             <tbody>
                 <tr *ngFor="let member of coreusers">
-                    <td class="name">{{member.firstName}}</td>
-                    <td [ngClass]="dayOfWeekName === 'Monday' ? 'today' : ''" class="{{member.monday}}">{{member.monday}}</td>
-                    <td [ngClass]="dayOfWeekName === 'Tuesday' ? 'today' : ''" class="{{member.tuesday}}">{{member.tuesday}}</td>
-                    <td [ngClass]="dayOfWeekName === 'Wednesday' ? 'today' : ''" class="{{member.wednesday}}">{{member.wednesday}}</td>
-                    <td [ngClass]="dayOfWeekName === 'Thursday' ? 'today' : ''" class="{{member.thursday}}">{{member.thursday}}</td>
-                    <td [ngClass]="dayOfWeekName === 'Friday' ? 'today' : ''" class="{{member.friday}}">{{member.friday}}</td>
+                    <td class="name"><a href="/ioeditor/{{member.username}}">{{member.firstName}}</a></td>
+                    <td [ngClass]="dayOfWeekName === 'Monday' ? 'today' : ''" class="{{member.mondayStatus}}">
+                        {{member.mondayStatus}} <br />
+                        {{member.mondayHours}}
+                    </td>
+                    <td [ngClass]="dayOfWeekName === 'Tuesday' ? 'today' : ''" class="{{member.tuesdayStatus}}">
+                        {{member.tuesdayStatus}} <br />
+                        {{member.tuesdayHours}}
+                    </td>
+                    <td [ngClass]="dayOfWeekName === 'Wednesday' ? 'today' : ''" class="{{member.wednesdayStatus}}">
+                        {{member.wednesdayStatus}} <br />
+                        {{member.wednesdayHours}}
+                    </td>
+                    <td [ngClass]="dayOfWeekName === 'Thursday' ? 'today' : ''" class="{{member.thursdayStatus}}">
+                        {{member.thursdayStatus}} <br />
+                        {{member.thursdayHours}}
+                    </td>
+                    <td [ngClass]="dayOfWeekName === 'Friday' ? 'today' : ''" class="{{member.fridayStatus}}">
+                        {{member.fridayStatus}} <br />
+                        {{member.fridayHours}}
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -39,12 +54,27 @@
             </thead>
             <tbody>
                 <tr *ngFor="let member of webusers">
-                    <td class="name">{{member.firstName}}</td>
-                    <td [ngClass]="dayOfWeekName === 'Monday' ? 'today' : ''" class="{{member.monday}}">{{member.monday}}</td>
-                    <td [ngClass]="dayOfWeekName === 'Tuesday' ? 'today' : ''" class="{{member.tuesday}}">{{member.tuesday}}</td>
-                    <td [ngClass]="dayOfWeekName === 'Wednesday' ? 'today' : ''" class="{{member.wednesday}}">{{member.wednesday}}</td>
-                    <td [ngClass]="dayOfWeekName === 'Thursday' ? 'today' : ''" class="{{member.thursday}}">{{member.thursday}}</td>
-                    <td [ngClass]="dayOfWeekName === 'Friday' ? 'today' : ''" class="{{member.friday}}">{{member.friday}}</td>
+                    <td class="name"><a href="/ioeditor/{{member.username}}">{{member.firstName}}</a></td>
+                    <td [ngClass]="dayOfWeekName === 'Monday' ? 'today' : ''" class="{{member.mondayStatus}}">
+                        {{member.mondayStatus}} <br />
+                        {{member.mondayHours}}
+                    </td>
+                    <td [ngClass]="dayOfWeekName === 'Tuesday' ? 'today' : ''" class="{{member.tuesdayStatus}}">
+                        {{member.tuesdayStatus}} <br />
+                        {{member.tuesdayHours}}
+                    </td>
+                    <td [ngClass]="dayOfWeekName === 'Wednesday' ? 'today' : ''" class="{{member.wednesdayStatus}}">
+                        {{member.wednesdayStatus}} <br />
+                        {{member.wednesdayHours}}
+                    </td>
+                    <td [ngClass]="dayOfWeekName === 'Thursday' ? 'today' : ''" class="{{member.thursdayStatus}}">
+                        {{member.thursdayStatus}} <br />
+                        {{member.thursdayHours}}
+                    </td>
+                    <td [ngClass]="dayOfWeekName === 'Friday' ? 'today' : ''" class="{{member.fridayStatus}}">
+                        {{member.fridayStatus}} <br />
+                        {{member.fridayHours}}
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -62,16 +92,31 @@
             </thead>
             <tbody>
                 <tr *ngFor="let member of multiusers">
-                    <td class="name">{{member.firstName}}</td>
-                    <td [ngClass]="dayOfWeekName === 'Monday' ? 'today' : ''" class="{{member.monday}}">{{member.monday}}</td>
-                    <td [ngClass]="dayOfWeekName === 'Tuesday' ? 'today' : ''" class="{{member.tuesday}}">{{member.tuesday}}</td>
-                    <td [ngClass]="dayOfWeekName === 'Wednesday' ? 'today' : ''" class="{{member.wednesday}}">{{member.wednesday}}</td>
-                    <td [ngClass]="dayOfWeekName === 'Thursday' ? 'today' : ''" class="{{member.thursday}}">{{member.thursday}}</td>
-                    <td [ngClass]="dayOfWeekName === 'Friday' ? 'today' : ''" class="{{member.friday}}">{{member.friday}}</td>
+                    <td class="name"><a href="/ioeditor/{{member.username}}">{{member.firstName}}</a></td>
+                    <td [ngClass]="dayOfWeekName === 'Monday' ? 'today' : ''" class="{{member.mondayStatus}}">
+                        {{member.mondayStatus}} <br />
+                        {{member.mondayHours}}
+                    </td>
+                    <td [ngClass]="dayOfWeekName === 'Tuesday' ? 'today' : ''" class="{{member.tuesdayStatus}}">
+                        {{member.tuesdayStatus}} <br />
+                        {{member.tuesdayHours}}
+                    </td>
+                    <td [ngClass]="dayOfWeekName === 'Wednesday' ? 'today' : ''" class="{{member.wednesdayStatus}}">
+                        {{member.wednesdayStatus}} <br />
+                        {{member.wednesdayHours}}
+                    </td>
+                    <td [ngClass]="dayOfWeekName === 'Thursday' ? 'today' : ''" class="{{member.thursdayStatus}}">
+                        {{member.thursdayStatus}} <br />
+                        {{member.thursdayHours}}
+                    </td>
+                    <td [ngClass]="dayOfWeekName === 'Friday' ? 'today' : ''" class="{{member.fridayStatus}}">
+                        {{member.fridayStatus}} <br />
+                        {{member.fridayHours}}
+                    </td>
                 </tr>
             </tbody>
         </table>
     </div>
     
 </div>
-<button class="col-2 btn btn-primary" [routerLink]="'/ioeditor'">Create New User</button>
+<button class="col-2 btn btn-primary" [routerLink]="'/iocreate'">Create New User</button>

@@ -4,11 +4,16 @@ export class User {
         public username: string,
         public firstName: string,
         public group: string,
-        public monday: string,
-        public tuesday: string,
-        public wednesday: string,
-        public thursday: string,
-        public friday: string,
+        public mondayStatus: string,
+        public tuesdayStatus: string,
+        public wednesdayStatus: string,
+        public thursdayStatus: string,
+        public fridayStatus: string,
+        public mondayHours: string,
+        public tuesdayHours: string,
+        public wednesdayHours: string,
+        public thursdayHours: string,
+        public fridayHours: string,
         public enabled: number
     ) {  }
 }

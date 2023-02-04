@@ -27,12 +27,42 @@ export class IoboardService {
       '?username=' + model.username +
       '&firstname=' + model.firstName +
       '&group=' + model.group +
-      '&monday=' + model.monday +
-      '&tuesday=' + model.tuesday +
-      '&wednesday=' + model.wednesday +
-      '&thursday=' + model.thursday +
-      '&friday=' + model.friday +
+      '&mondayStatus=' + model.mondayStatus +
+      '&tuesdayStatus=' + model.tuesdayStatus +
+      '&wednesdayStatus=' + model.wednesdayStatus +
+      '&thursdayStatus=' + model.thursdayStatus +
+      '&fridayStatus=' + model.fridayStatus +
+      '&mondayHours=' + model.mondayHours +
+      '&tuesdayHours=' + model.tuesdayHours +
+      '&wednesdayHours=' + model.wednesdayHours +
+      '&thursdayHours=' + model.thursdayHours +
+      '&fridayHours=' + model.fridayHours +
       '&enabled=' + model.enabled
+    );
+  }
+
+  updateUser(model: User) {
+    return this.httpClient.get(this.baseUrl + 'user/update' +
+      '?username=' + model.username +
+      '&firstname=' + model.firstName +
+      '&group=' + model.group +
+      '&mondayStatus=' + model.mondayStatus +
+      '&tuesdayStatus=' + model.tuesdayStatus +
+      '&wednesdayStatus=' + model.wednesdayStatus +
+      '&thursdayStatus=' + model.thursdayStatus +
+      '&fridayStatus=' + model.fridayStatus +
+      '&mondayHours=' + model.mondayHours +
+      '&tuesdayHours=' + model.tuesdayHours +
+      '&wednesdayHours=' + model.wednesdayHours +
+      '&thursdayHours=' + model.thursdayHours +
+      '&fridayHours=' + model.fridayHours +
+      '&enabled=' + model.enabled
+    );
+  }
+
+  deleteUser(username: string) {
+    return this.httpClient.get(
+      this.baseUrl + 'user/delete/' + username
     );
   }
 }

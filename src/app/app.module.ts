@@ -10,6 +10,7 @@ import { LoginsComponent } from './logins/logins.component';
 import { HttpClientModule } from '@angular/common/http';
 import { IoboardComponent } from './ioboard/ioboard.component';
 import { IoeditorComponent } from './ioeditor/ioeditor.component';
+import { IocreateComponent } from './iocreate/iocreate.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { IoeditorComponent } from './ioeditor/ioeditor.component';
     NavbarComponent,
     LoginsComponent,
     IoboardComponent,
-    IoeditorComponent
+    IoeditorComponent,
+    IocreateComponent
   ],
   imports: [
     BrowserModule,
