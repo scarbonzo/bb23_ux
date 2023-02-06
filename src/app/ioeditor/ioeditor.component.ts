@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ngbCarouselTransitionOut} from '@ng-bootstrap/ng-bootstrap/carousel/carousel-transition';
 import { IoboardService } from '../ioboard.service';
 
 import { User } from '../user';
@@ -18,17 +17,29 @@ export class IoeditorComponent {
   model: any;
   username = '';
 
+  groups = [] as any;
+  statuses = [] as any;
+  hours = [] as any;
+
   ngOnInit(): void {
     this.username = this.activatedRoute.snapshot.paramMap.get('username') as string;
     this.ioboardservice
       .getUser(this.username)
       .subscribe(data => {  this.model = data;
-      });
+    });
+    this.ioboardservice
+      .getGroups()
+        .subscribe(data => {  this.groups = data;
+    });
+    this.ioboardservice
+      .getStatuses()
+        .subscribe(data => {  this.statuses = data;
+    });
+    this.ioboardservice
+      .getHours()
+        .subscribe(data => {  this.hours = data;
+    });
   }
-
-  groups: any = [ 'Core', 'HD', 'Web', 'Multi']
-  statuses: any = [ 'Office', 'WFH', 'Out', 'Offsite', 'Holiday' ]
-  hours: any = [ '8:00-4:00', '8:30-4:30', '9:00-5:00', '9:30-5:30' ]
 
   updateGroup(e: any) {
     console.log(e.target.value);

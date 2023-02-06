@@ -12,7 +12,23 @@ export class IocreateComponent implements OnInit {
 
   constructor(private _router: Router, private ioboardservice: IoboardService) { }
 
+  groups = [] as any;
+  statuses = [] as any;
+  hours = [] as any;
+
   ngOnInit(): void {
+    this.ioboardservice
+      .getGroups()
+        .subscribe(data => {  this.groups = data;
+    });
+    this.ioboardservice
+      .getStatuses()
+        .subscribe(data => {  this.statuses = data;
+    });
+    this.ioboardservice
+      .getHours()
+        .subscribe(data => {  this.hours = data;
+    });
   }
 
   _username = '';
@@ -47,14 +63,12 @@ export class IocreateComponent implements OnInit {
     this._enabled
     );
 
-  groups: any = [ 'Core', 'Web', 'Multi']
-  statuses: any = [ 'Office', 'WFH', 'Out', 'Holiday' ]
-  hours: any = [ '8:00-4:00', '8:30-4:30', '9:00-5:00', '9:30-5:30' ]
-
   createUser() {
     this.ioboardservice
       .createUser(this.model)
         .subscribe();
     this._router.navigateByUrl('/ioboard')
   }
+
+  
 }

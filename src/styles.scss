@@ -16,7 +16,7 @@
 }
 
 body {
-    background-color: #F0F0F0;
+    background-color: lightgray;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -57,13 +57,51 @@ body {
 }
 
 .accordion-button {
-    background-color: gainsboro !important;
+    background-color: silver !important;
+}
+
+.accordion-body {
+    background-color: white !important;
 }
 
 .accordion-item {
-    background-color: ghostwhite;
+    background-color: whitesmoke;
 }
 
 .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
-    background-color: gainsboro;
+    background-color: lightgray;
  }
+
+.name {
+    background-color: white !important;
+    text-align: left;
+    font-weight: bold;
+}
+
+.Holiday {
+    background-color: lightgoldenrodyellow;
+}
+
+.Office {
+    background-color: lightgreen;
+}
+
+.WFH {
+    background-color: lightblue;
+}
+
+.Offsite {
+    background-color: violet;
+}
+
+.Out {
+    background-color: coral;
+}
+
+.Training {
+    background-color: pink;
+}
+
+.today {
+    font-weight: bold;
+}

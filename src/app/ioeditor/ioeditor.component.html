@@ -35,7 +35,7 @@
                             <select class="form-control"  id="group"
                                 required
                                 [(ngModel)]="model.group" name="group">
-                                <option *ngFor="let g of groups" [value]="g">{{g}}</option>
+                                <option *ngFor="let g of groups" [value]="g.name">{{g.name}}</option>
                             </select>
                         </div>
 
@@ -46,14 +46,14 @@
                             <select class="form-control {{model.mondayStatus}}"  id="mondayStatus"
                                 required
                                 [(ngModel)]="model.mondayStatus" name="mondayStatus">
-                                <option *ngFor="let s of statuses" [value]="s">{{s}}</option>
+                                <option *ngFor="let s of statuses" [value]="s.name">{{s.name}}</option>
                             </select>
                         </div>
                         <div class="col-5">
                             <select class="form-control {{model.mondayHours}}"  id="mondayHours"
                                 required
                                 [(ngModel)]="model.mondayHours" name="mondayHours">
-                                <option *ngFor="let h of hours" [value]="h">{{h}}</option>
+                                <option *ngFor="let h of hours" [value]="h.name">{{h.name}}</option>
                             </select>
                         </div>
                         
@@ -64,14 +64,14 @@
                             <select class="form-control {{model.tuesdayStatus}}" id="tuesday"
                                 required
                                 [(ngModel)]="model.tuesdayStatus" name="tuesday">
-                                <option *ngFor="let s of statuses" [value]="s">{{s}}</option>
+                                <option *ngFor="let s of statuses" [value]="s.name">{{s.name}}</option>
                             </select>
                         </div>
                         <div class="col-5">
                             <select class="form-control {{model.tuesdayHours}}"  id="tuesdayHours"
                                 required
                                 [(ngModel)]="model.tuesdayHours" name="tuesdayHours">
-                                <option *ngFor="let h of hours" [value]="h">{{h}}</option>
+                                <option *ngFor="let h of hours" [value]="h.name">{{h.name}}</option>
                             </select>
                         </div>
                         
@@ -82,14 +82,14 @@
                             <select class="form-control {{model.wednesdayStatus}}" id="wednesday"
                                 required
                                 [(ngModel)]="model.wednesdayStatus" name="wednesday">
-                                <option *ngFor="let s of statuses" [value]="s">{{s}}</option>
+                                <option *ngFor="let s of statuses" [value]="s.name">{{s.name}}</option>
                             </select>
                         </div>
                         <div class="col-5">
                             <select class="form-control {{model.wednesdayHours}}"  id="wednesdayHours"
                                 required
                                 [(ngModel)]="model.wednesdayHours" name="wednesdayHours">
-                                <option *ngFor="let h of hours" [value]="h">{{h}}</option>
+                                <option *ngFor="let h of hours" [value]="h.name">{{h.name}}</option>
                             </select>
                         </div>
 
@@ -100,14 +100,14 @@
                             <select class="form-control {{model.thursdayStatus}}" id="thursday"
                                 required
                                 [(ngModel)]="model.thursdayStatus" name="thursday">
-                                <option *ngFor="let s of statuses" [value]="s">{{s}}</option>
+                                <option *ngFor="let s of statuses" [value]="s.name">{{s.name}}</option>
                             </select>
                         </div>
                         <div class="col-5">
                             <select class="form-control {{model.thursdayHours}}"  id="thursdayHours"
                                 required
                                 [(ngModel)]="model.thursdayHours" name="thursdayHours">
-                                <option *ngFor="let h of hours" [value]="h">{{h}}</option>
+                                <option *ngFor="let h of hours" [value]="h.name">{{h.name}}</option>
                             </select>
                         </div>
 
@@ -118,14 +118,14 @@
                             <select class="form-control {{model.fridayStatus}}" id="friday"
                                 required
                                 [(ngModel)]="model.fridayStatus" name="friday">
-                                <option *ngFor="let s of statuses" [value]="s">{{s}}</option>
+                                <option *ngFor="let s of statuses" [value]="s.name">{{s.name}}</option>
                             </select>
                         </div>
                         <div class="col-5">
                             <select class="form-control {{model.fridayHours}}"  id="fridayHours"
                                 required
                                 [(ngModel)]="model.fridayHours" name="fridayHours">
-                                <option *ngFor="let h of hours" [value]="h">{{h}}</option>
+                                <option *ngFor="let h of hours" [value]="h.name">{{h.name}}</option>
                             </select>
                         </div>
                         <div class="row"><br /></div>

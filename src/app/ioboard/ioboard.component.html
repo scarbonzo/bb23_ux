@@ -1,9 +1,8 @@
-<br />
 <div class="row">
     <div class="col-6">
         <table class="table table-bordered">
             <thead>
-                <tr >
+                <tr>
                     <th class="col col-1">Core</th>
                     <th class="col col-2">Monday</th>
                     <th class="col col-2">Tuesday</th>
@@ -38,9 +37,6 @@
                 </tr>
             </tbody>
         </table>
-    </div>
-
-    <div class="col-6">
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -78,6 +74,47 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+
+    <div class="col-6">
+        <table class="table table-bordered">
+            <thead>
+                <tr >
+                    <th class="col col-1">Helpdesk</th>
+                    <th class="col col-2">Monday</th>
+                    <th class="col col-2">Tuesday</th>
+                    <th class="col col-2">Wednesday</th>
+                    <th class="col col-2">Thursday</th>
+                    <th class="col col-2">Friday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let member of hdusers">
+                    <td class="name"><a href="/ioeditor/{{member.username}}">{{member.firstName}}</a></td>
+                    <td [ngClass]="dayOfWeekName === 'Monday' ? 'today' : ''" class="{{member.mondayStatus}}">
+                        {{member.mondayStatus}} <br />
+                        {{member.mondayHours}}
+                    </td>
+                    <td [ngClass]="dayOfWeekName === 'Tuesday' ? 'today' : ''" class="{{member.tuesdayStatus}}">
+                        {{member.tuesdayStatus}} <br />
+                        {{member.tuesdayHours}}
+                    </td>
+                    <td [ngClass]="dayOfWeekName === 'Wednesday' ? 'today' : ''" class="{{member.wednesdayStatus}}">
+                        {{member.wednesdayStatus}} <br />
+                        {{member.wednesdayHours}}
+                    </td>
+                    <td [ngClass]="dayOfWeekName === 'Thursday' ? 'today' : ''" class="{{member.thursdayStatus}}">
+                        {{member.thursdayStatus}} <br />
+                        {{member.thursdayHours}}
+                    </td>
+                    <td [ngClass]="dayOfWeekName === 'Friday' ? 'today' : ''" class="{{member.fridayStatus}}">
+                        {{member.fridayStatus}} <br />
+                        {{member.fridayHours}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
 
         <table class="table table-bordered">
             <thead>

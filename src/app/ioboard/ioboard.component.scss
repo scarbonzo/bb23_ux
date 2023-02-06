@@ -1,17 +1,20 @@
 th {
-    background-color: white !important;
+    background-color: silver !important;
     text-align: center;
 }
 
 td {
     text-align: center;
+    vertical-align: middle;
 }
-
 .name {
-    background-color: white !important;
+    background-color: #E0E0E0 !important;
     text-align: left;
     font-weight: bold;
-    vertical-align: middle;
+}
+
+.table-bordered {
+    border-color: black;
 }
 
 .Holiday {
@@ -19,19 +22,23 @@ td {
 }
 
 .Office {
-    background-color: lightgreen;
+    background-color: #32CD32;
 }
 
 .WFH {
-    background-color: lightblue;
+    background-color: LightSkyBlue;
 }
 
 .Offsite {
-    background-color: violet;
+    background-color: #9370DB;
 }
 
 .Out {
-    background-color: coral;
+    background-color: red;
+}
+
+.Training {
+    background-color: hotpink;
 }
 
 .today {
