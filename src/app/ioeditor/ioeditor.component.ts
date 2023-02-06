@@ -26,11 +26,9 @@ export class IoeditorComponent {
       });
   }
 
-  groups: any = [ 'Core', 'Web', 'Multi']
-  statuses: any = [ 'Office', 'WFH', 'Out', 'Holiday' ]
+  groups: any = [ 'Core', 'HD', 'Web', 'Multi']
+  statuses: any = [ 'Office', 'WFH', 'Out', 'Offsite', 'Holiday' ]
   hours: any = [ '8:00-4:00', '8:30-4:30', '9:00-5:00', '9:30-5:30' ]
-
-  
 
   updateGroup(e: any) {
     console.log(e.target.value);

@@ -8,6 +8,7 @@ import { IoboardService } from '../ioboard.service';
 })
 export class IoboardComponent {
   coreusers = [] as any;
+  hdusers = [] as any;
   webusers = [] as any;
   multiusers = [] as any;
 
@@ -19,17 +20,22 @@ export class IoboardComponent {
 
   ngOnInit(): void {
     this.ioboardservice
-      .getGroup("Core")
+      .getGroupMembers("Core")
         .subscribe(data => {  this.coreusers = data;
     });
 
     this.ioboardservice
-      .getGroup("Web")
+      .getGroupMembers("Helpdesk")
+        .subscribe(data => {  this.hdusers = data;
+    });
+
+    this.ioboardservice
+      .getGroupMembers("Web")
         .subscribe(data => {  this.webusers = data;
     });
 
     this.ioboardservice
-      .getGroup("Multi")
+      .getGroupMembers("Multi")
         .subscribe(data => {  this.multiusers = data;
     });
   }

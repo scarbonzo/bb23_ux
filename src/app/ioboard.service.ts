@@ -18,7 +18,7 @@ export class IoboardService {
     return this.httpClient.get(this.baseUrl + 'user/' + username);
   }
 
-  getGroup(groupname: string) {
+  getGroupMembers(groupname: string) {
     return this.httpClient.get(this.baseUrl + 'group/' + groupname);
   }
 
@@ -64,5 +64,17 @@ export class IoboardService {
     return this.httpClient.get(
       this.baseUrl + 'user/delete/' + username
     );
+  }
+
+  getStatuses() {
+    return this.httpClient.get(this.baseUrl + 'statuses/');
+  }
+
+  getGroups() {
+    return this.httpClient.get(this.baseUrl + 'groups/');
+  }
+
+  getHours() {
+    return this.httpClient.get(this.baseUrl + 'hours/');
   }
 }
