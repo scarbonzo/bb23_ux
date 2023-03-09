@@ -11,6 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { IoboardComponent } from './ioboard/ioboard.component';
 import { IoeditorComponent } from './ioeditor/ioeditor.component';
 import { IocreateComponent } from './iocreate/iocreate.component';
+import { BoardComponent } from './board/board.component';
+import { EditorComponent } from './editor/editor.component';
+import { CreateComponent } from './create/create.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { IocreateComponent } from './iocreate/iocreate.component';
     LoginsComponent,
     IoboardComponent,
     IoeditorComponent,
-    IocreateComponent
+    IocreateComponent,
+    BoardComponent,
+    EditorComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,

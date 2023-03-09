@@ -7,6 +7,7 @@ import { IoboardService } from '../ioboard.service';
   styleUrls: ['./ioboard.component.scss']
 })
 export class IoboardComponent {
+  mgmtusers = [] as any;
   coreusers = [] as any;
   hdusers = [] as any;
   webusers = [] as any;
@@ -19,6 +20,10 @@ export class IoboardComponent {
   constructor(private ioboardservice: IoboardService) { }
 
   ngOnInit(): void {
+    this.ioboardservice
+      .getGroupMembers("Management")
+        .subscribe(data => {  this.mgmtusers = data;
+    });
     this.ioboardservice
       .getGroupMembers("Core")
         .subscribe(data => {  this.coreusers = data;
