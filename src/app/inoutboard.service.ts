@@ -13,7 +13,7 @@ export class InoutboardService {
   constructor(private httpClient: HttpClient) { }
 
   getGroupMembers(groupname: string) {
-    return this.httpClient.get(this.baseUrl + 'group/' + groupname);
+    return this.httpClient.get(this.baseUrl + 'v2/group/' + groupname);
   }
 
   getStatuses() {
