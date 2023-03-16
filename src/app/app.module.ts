@@ -14,6 +14,7 @@ import { IocreateComponent } from './iocreate/iocreate.component';
 import { BoardComponent } from './board/board.component';
 import { EditorComponent } from './editor/editor.component';
 import { CreateComponent } from './create/create.component';
+import { LiveboardComponent } from './liveboard/liveboard.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CreateComponent } from './create/create.component';
     IocreateComponent,
     BoardComponent,
     EditorComponent,
-    CreateComponent
+    CreateComponent,
+    LiveboardComponent
   ],
   imports: [
     BrowserModule,

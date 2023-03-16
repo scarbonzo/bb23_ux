@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { InoutboardService } from '../inoutboard.service';
 import { Observable, Subscription, interval } from 'rxjs';
 
 @Component({
-  selector: 'app-board',
-  templateUrl: './board.component.html',
-  styleUrls: ['./board.component.scss']
+  selector: 'app-liveboard',
+  templateUrl: './liveboard.component.html',
+  styleUrls: ['./liveboard.component.scss']
 })
-export class BoardComponent implements OnInit {
-
+export class LiveboardComponent {
   constructor(private inoutboardservice: InoutboardService) { }
 
   private updateSubscription!: Subscription;
@@ -18,17 +17,6 @@ export class BoardComponent implements OnInit {
   hdusers = [] as any;
   webusers = [] as any;
   multiusers = [] as any;
-
-  showManagement = true;
-  showCore = true;
-  showHelpdesk = true;
-  showWeb = true;
-  showMulti = true;
-
-  showStatus = true;
-  showHours = true;
-  showNotes = true;
-  showWeekNotes = false;
 
   ngOnInit() {
     this.GetUsers();
@@ -67,5 +55,4 @@ export class BoardComponent implements OnInit {
         .subscribe(data => {  this.multiusers = data;
     });
   }
-
 }

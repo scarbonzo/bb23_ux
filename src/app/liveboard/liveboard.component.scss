@@ -45,14 +45,21 @@
 }
 
 .table-bordered {
-    border: 1px solid gray;
+    border-color: black;
 }
 
 .working-true {
     color: gray;
 }
 
-.today {
-    font-weight: bold;
-    border: 3px solid green !important;
+.in {
+    a:link { color: black; }
+    a:visited { color: black; }
+    background-color: green;
+}
+
+.out {
+    a:link { color: black; }
+    a:visited { color: black; }
+    background-color: red;
 }

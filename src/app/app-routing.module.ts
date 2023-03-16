@@ -7,6 +7,7 @@ import { IocreateComponent } from './iocreate/iocreate.component';
 import { IoeditorComponent } from './ioeditor/ioeditor.component';
 import { LoginsComponent } from './logins/logins.component';
 import { CreateComponent } from './create/create.component';
+import { LiveboardComponent } from './liveboard/liveboard.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,9 @@ const routes: Routes = [
   },{
     path: 'create',
     component: CreateComponent
+  },{
+    path: 'live',
+    component: LiveboardComponent
   }
 ];
 
