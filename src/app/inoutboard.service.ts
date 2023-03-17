@@ -59,6 +59,14 @@ export class InoutboardService {
   }
 
   updateUser(model: User2) {
+    
+    if(model.mondayNotes == null) { model.mondayNotes = ""; }
+    if(model.tuesdayNotes == null) { model.tuesdayNotes = ""; }
+    if(model.wednesdayNotes == null) { model.wednesdayNotes = ""; }
+    if(model.thursdayNotes == null) { model.thursdayNotes = ""; }
+    if(model.fridayNotes == null) { model.fridayNotes = ""; }
+    if(model.weekNotes == null) { model.weekNotes = ""; }
+
     return this.httpClient.get(this.baseUrl + 'user/update' +
       '?username=' + model.username +
       '&firstname=' + model.firstName +

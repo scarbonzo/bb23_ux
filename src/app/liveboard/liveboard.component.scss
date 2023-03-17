@@ -39,6 +39,12 @@
     background-color: #F0F0F0 !important;
 }
 
+td {
+    height:60px;
+    a:link { color: black; }
+    a:visited { color: black; }
+}
+
 .notes {
     font-size: small;
     font-style: italic;
@@ -50,12 +56,6 @@
 
 .working-true {
     color: gray;
-}
-
-.in {
-    a:link { color: black; }
-    a:visited { color: black; }
-    background-color: green;
 }
 
 .out {
