@@ -30,247 +30,255 @@
 </div> 
 <br />
 
-<div name="tables" [ngClass]="showWeekNotes === true ? 'col-12' : 'col-6'">
-    <div *ngIf="showManagement">
-        <h4>Management and Admin</h4>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '100'} || {'width': '50'}"></th>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Monday</th>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Tuesday</th>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Wednesday</th>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Thursday</th>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Friday</th>
-                    <th *ngIf="showWeekNotes" class="col" width="500">Week Notes</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let member of mgmtusers">
-                    <td class="name"><a href="/editor/{{member.username}}">{{member.firstName}}</a></td>
-                    <td [ngClass]="dayOfWeekName === 'Monday' && member.working ? 'today' : ''" class="{{member.mondayStatus}}">
-                        <div *ngIf="showStatus">{{member.mondayStatus}} <br /></div>
-                        <div *ngIf="showHours">{{member.mondayStart}}-{{member.mondayEnd}} <br /></div>
-                        <div *ngIf="showNotes" class="notes">{{member.mondayNotes}}</div>
-                    </td>
-                    <td [ngClass]="dayOfWeekName === 'Tuesday' && member.working ? 'today' : ''" class="{{member.tuesdayStatus}}">
-                        <div *ngIf="showStatus">{{member.tuesdayStatus}} <br /></div>
-                        <div *ngIf="showHours">{{member.tuesdayStart}}-{{member.tuesdayEnd}} <br /></div>
-                        <div *ngIf="showNotes" class="notes">{{member.tuesdayNotes}}</div>
-                    </td>
-                    <td [ngClass]="dayOfWeekName === 'Wednesday' && member.working ? 'today' : ''" class="{{member.wednesdayStatus}}">
-                        <div *ngIf="showStatus">{{member.wednesdayStatus}} <br /></div>
-                        <div *ngIf="showHours">{{member.wednesdayStart}}-{{member.wednesdayEnd}} <br /></div>
-                        <div *ngIf="showNotes" class="notes">{{member.wednesdayNotes}}</div>
-                    </td>
-                    <td [ngClass]="dayOfWeekName === 'Thursday' && member.working ? 'today' : ''" class="{{member.thursdayStatus}}">
-                        <div *ngIf="showStatus">{{member.thursdayStatus}} <br /></div>
-                        <div *ngIf="showHours">{{member.thursdayStart}}-{{member.thursdayEnd}} <br /></div>
-                        <div *ngIf="showNotes" class="notes">{{member.thursdayNotes}}</div>
-                    </td>
-                    <td [ngClass]="dayOfWeekName === 'Friday' && member.working ? 'today' : ''" class="{{member.fridayStatus}}">
-                        <div *ngIf="showStatus">{{member.fridayStatus}} <br /></div>
-                        <div *ngIf="showHours">{{member.fridayStart}}-{{member.fridayEnd}} <br /></div>
-                        <div *ngIf="showNotes" class="notes">{{member.fridayNotes}}</div>
-                    </td>
-                    <td *ngIf="showWeekNotes">
-                        {{member.weekNotes}}
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+<div class="row">
+    <div class="col-6">
+        <div *ngIf="showManagement">
+            <h4>Management and Admin</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '100'} || {'width': '50'}"></th>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Monday</th>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Tuesday</th>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Wednesday</th>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Thursday</th>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Friday</th>
+                        <th *ngIf="showWeekNotes" class="col" width="500">Week Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let member of mgmtusers">
+                        <td class="name"><a href="/editor/{{member.username}}">{{member.firstName}}</a></td>
+                        <td [ngClass]="dayOfWeekName === 'Monday' && member.working ? 'today' : ''" class="{{member.mondayStatus}}">
+                            <div *ngIf="showStatus">{{member.mondayStatus}} <br /></div>
+                            <div *ngIf="showHours">{{member.mondayStart}}-{{member.mondayEnd}} <br /></div>
+                            <div *ngIf="showNotes" class="notes">{{member.mondayNotes}}</div>
+                        </td>
+                        <td [ngClass]="dayOfWeekName === 'Tuesday' && member.working ? 'today' : ''" class="{{member.tuesdayStatus}}">
+                            <div *ngIf="showStatus">{{member.tuesdayStatus}} <br /></div>
+                            <div *ngIf="showHours">{{member.tuesdayStart}}-{{member.tuesdayEnd}} <br /></div>
+                            <div *ngIf="showNotes" class="notes">{{member.tuesdayNotes}}</div>
+                        </td>
+                        <td [ngClass]="dayOfWeekName === 'Wednesday' && member.working ? 'today' : ''" class="{{member.wednesdayStatus}}">
+                            <div *ngIf="showStatus">{{member.wednesdayStatus}} <br /></div>
+                            <div *ngIf="showHours">{{member.wednesdayStart}}-{{member.wednesdayEnd}} <br /></div>
+                            <div *ngIf="showNotes" class="notes">{{member.wednesdayNotes}}</div>
+                        </td>
+                        <td [ngClass]="dayOfWeekName === 'Thursday' && member.working ? 'today' : ''" class="{{member.thursdayStatus}}">
+                            <div *ngIf="showStatus">{{member.thursdayStatus}} <br /></div>
+                            <div *ngIf="showHours">{{member.thursdayStart}}-{{member.thursdayEnd}} <br /></div>
+                            <div *ngIf="showNotes" class="notes">{{member.thursdayNotes}}</div>
+                        </td>
+                        <td [ngClass]="dayOfWeekName === 'Friday' && member.working ? 'today' : ''" class="{{member.fridayStatus}}">
+                            <div *ngIf="showStatus">{{member.fridayStatus}} <br /></div>
+                            <div *ngIf="showHours">{{member.fridayStart}}-{{member.fridayEnd}} <br /></div>
+                            <div *ngIf="showNotes" class="notes">{{member.fridayNotes}}</div>
+                        </td>
+                        <td *ngIf="showWeekNotes">
+                            {{member.weekNotes}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br />
+        <div *ngIf="showCore">
+            <h4>Infrastructure and Systems</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '100'} || {'width': '50'}"></th>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Monday</th>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Tuesday</th>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Wednesday</th>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Thursday</th>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Friday</th>
+                        <th *ngIf="showWeekNotes" class="col" width="500">Week Notes</th>
+                    </tr>
+                <tbody>
+                    <tr *ngFor="let member of coreusers">
+                        <td class="name"><a href="/editor/{{member.username}}">{{member.firstName}}</a></td>
+                        <td [ngClass]="dayOfWeekName === 'Monday' && member.working ? 'today' : ''" class="{{member.mondayStatus}}">
+                            <div *ngIf="showStatus">{{member.mondayStatus}} <br /></div>
+                            <div *ngIf="showHours">{{member.mondayStart}}-{{member.mondayEnd}} <br /></div>
+                            <div *ngIf="showNotes" class="notes">{{member.mondayNotes}}</div>
+                        </td>
+                        <td [ngClass]="dayOfWeekName === 'Tuesday' && member.working ? 'today' : ''" class="{{member.tuesdayStatus}}">
+                            <div *ngIf="showStatus">{{member.tuesdayStatus}} <br /></div>
+                            <div *ngIf="showHours">{{member.tuesdayStart}}-{{member.tuesdayEnd}} <br /></div>
+                            <div *ngIf="showNotes" class="notes">{{member.tuesdayNotes}}</div>
+                        </td>
+                        <td [ngClass]="dayOfWeekName === 'Wednesday' && member.working ? 'today' : ''" class="{{member.wednesdayStatus}}">
+                            <div *ngIf="showStatus">{{member.wednesdayStatus}} <br /></div>
+                            <div *ngIf="showHours">{{member.wednesdayStart}}-{{member.wednesdayEnd}} <br /></div>
+                            <div *ngIf="showNotes" class="notes">{{member.wednesdayNotes}}</div>
+                        </td>
+                        <td [ngClass]="dayOfWeekName === 'Thursday' && member.working ? 'today' : ''" class="{{member.thursdayStatus}}">
+                            <div *ngIf="showStatus">{{member.thursdayStatus}} <br /></div>
+                            <div *ngIf="showHours">{{member.thursdayStart}}-{{member.thursdayEnd}} <br /></div>
+                            <div *ngIf="showNotes" class="notes">{{member.thursdayNotes}}</div>
+                        </td>
+                        <td [ngClass]="dayOfWeekName === 'Friday' && member.working ? 'today' : ''" class="{{member.fridayStatus}}">
+                            <div *ngIf="showStatus">{{member.fridayStatus}} <br /></div>
+                            <div *ngIf="showHours">{{member.fridayStart}}-{{member.fridayEnd}} <br /></div>
+                            <div *ngIf="showNotes" class="notes">{{member.fridayNotes}}</div>
+                        </td>
+                        <td *ngIf="showWeekNotes">
+                            {{member.weekNotes}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br />
+        <div *ngIf="showWeb">
+            <h4>Web and Development</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '100'} || {'width': '50'}"></th>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Monday</th>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Tuesday</th>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Wednesday</th>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Thursday</th>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Friday</th>
+                        <th *ngIf="showWeekNotes" class="col" width="500">Week Notes</th>
+                    </tr>
+                <tbody>
+                    <tr *ngFor="let member of webusers">
+                        <td class="name"><a href="/editor/{{member.username}}">{{member.firstName}}</a></td>
+                        <td [ngClass]="dayOfWeekName === 'Monday' && member.working ? 'today' : ''" class="{{member.mondayStatus}}">
+                            <div *ngIf="showStatus">{{member.mondayStatus}} <br /></div>
+                            <div *ngIf="showHours">{{member.mondayStart}}-{{member.mondayEnd}} <br /></div>
+                            <div *ngIf="showNotes" class="notes">{{member.mondayNotes}}</div>
+                        </td>
+                        <td [ngClass]="dayOfWeekName === 'Tuesday' && member.working ? 'today' : ''" class="{{member.tuesdayStatus}}">
+                            <div *ngIf="showStatus">{{member.tuesdayStatus}} <br /></div>
+                            <div *ngIf="showHours">{{member.tuesdayStart}}-{{member.tuesdayEnd}} <br /></div>
+                            <div *ngIf="showNotes" class="notes">{{member.tuesdayNotes}}</div>
+                        </td>
+                        <td [ngClass]="dayOfWeekName === 'Wednesday' && member.working ? 'today' : ''" class="{{member.wednesdayStatus}}">
+                            <div *ngIf="showStatus">{{member.wednesdayStatus}} <br /></div>
+                            <div *ngIf="showHours">{{member.wednesdayStart}}-{{member.wednesdayEnd}} <br /></div>
+                            <div *ngIf="showNotes" class="notes">{{member.wednesdayNotes}}</div>
+                        </td>
+                        <td [ngClass]="dayOfWeekName === 'Thursday' && member.working ? 'today' : ''" class="{{member.thursdayStatus}}">
+                            <div *ngIf="showStatus">{{member.thursdayStatus}} <br /></div>
+                            <div *ngIf="showHours">{{member.thursdayStart}}-{{member.thursdayEnd}} <br /></div>
+                            <div *ngIf="showNotes" class="notes">{{member.thursdayNotes}}</div>
+                        </td>
+                        <td [ngClass]="dayOfWeekName === 'Friday' && member.working ? 'today' : ''" class="{{member.fridayStatus}}">
+                            <div *ngIf="showStatus">{{member.fridayStatus}} <br /></div>
+                            <div *ngIf="showHours">{{member.fridayStart}}-{{member.fridayEnd}} <br /></div>
+                            <div *ngIf="showNotes" class="notes">{{member.fridayNotes}}</div>
+                        </td>
+                        <td *ngIf="showWeekNotes">
+                            {{member.weekNotes}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <br />
-    <div *ngIf="showCore">
-        <h4>Infrastructure and Systems</h4>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '100'} || {'width': '50'}"></th>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Monday</th>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Tuesday</th>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Wednesday</th>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Thursday</th>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Friday</th>
-                    <th *ngIf="showWeekNotes" class="col" width="500">Week Notes</th>
-                </tr>
-            <tbody>
-                <tr *ngFor="let member of coreusers">
-                    <td class="name"><a href="/editor/{{member.username}}">{{member.firstName}}</a></td>
-                    <td [ngClass]="dayOfWeekName === 'Monday' && member.working ? 'today' : ''" class="{{member.mondayStatus}}">
-                        <div *ngIf="showStatus">{{member.mondayStatus}} <br /></div>
-                        <div *ngIf="showHours">{{member.mondayStart}}-{{member.mondayEnd}} <br /></div>
-                        <div *ngIf="showNotes" class="notes">{{member.mondayNotes}}</div>
-                    </td>
-                    <td [ngClass]="dayOfWeekName === 'Tuesday' && member.working ? 'today' : ''" class="{{member.tuesdayStatus}}">
-                        <div *ngIf="showStatus">{{member.tuesdayStatus}} <br /></div>
-                        <div *ngIf="showHours">{{member.tuesdayStart}}-{{member.tuesdayEnd}} <br /></div>
-                        <div *ngIf="showNotes" class="notes">{{member.tuesdayNotes}}</div>
-                    </td>
-                    <td [ngClass]="dayOfWeekName === 'Wednesday' && member.working ? 'today' : ''" class="{{member.wednesdayStatus}}">
-                        <div *ngIf="showStatus">{{member.wednesdayStatus}} <br /></div>
-                        <div *ngIf="showHours">{{member.wednesdayStart}}-{{member.wednesdayEnd}} <br /></div>
-                        <div *ngIf="showNotes" class="notes">{{member.wednesdayNotes}}</div>
-                    </td>
-                    <td [ngClass]="dayOfWeekName === 'Thursday' && member.working ? 'today' : ''" class="{{member.thursdayStatus}}">
-                        <div *ngIf="showStatus">{{member.thursdayStatus}} <br /></div>
-                        <div *ngIf="showHours">{{member.thursdayStart}}-{{member.thursdayEnd}} <br /></div>
-                        <div *ngIf="showNotes" class="notes">{{member.thursdayNotes}}</div>
-                    </td>
-                    <td [ngClass]="dayOfWeekName === 'Friday' && member.working ? 'today' : ''" class="{{member.fridayStatus}}">
-                        <div *ngIf="showStatus">{{member.fridayStatus}} <br /></div>
-                        <div *ngIf="showHours">{{member.fridayStart}}-{{member.fridayEnd}} <br /></div>
-                        <div *ngIf="showNotes" class="notes">{{member.fridayNotes}}</div>
-                    </td>
-                    <td *ngIf="showWeekNotes">
-                        {{member.weekNotes}}
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="col-6">
+        <div *ngIf="showHelpdesk">
+            <h4>Help Desk</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '100'} || {'width': '50'}"></th>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Monday</th>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Tuesday</th>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Wednesday</th>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Thursday</th>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Friday</th>
+                        <th *ngIf="showWeekNotes" class="col" width="500">Week Notes</th>
+                    </tr>
+                <tbody>
+                    <tr *ngFor="let member of hdusers">
+                        <td class="name"><a href="/editor/{{member.username}}">{{member.firstName}}</a></td>
+                        <td [ngClass]="dayOfWeekName === 'Monday' && member.working ? 'today' : ''" class="{{member.mondayStatus}}">
+                            <div *ngIf="showStatus">{{member.mondayStatus}} <br /></div>
+                            <div *ngIf="showHours">{{member.mondayStart}}-{{member.mondayEnd}} <br /></div>
+                            <div *ngIf="showNotes" class="notes">{{member.mondayNotes}}</div>
+                        </td>
+                        <td [ngClass]="dayOfWeekName === 'Tuesday' && member.working ? 'today' : ''" class="{{member.tuesdayStatus}}">
+                            <div *ngIf="showStatus">{{member.tuesdayStatus}} <br /></div>
+                            <div *ngIf="showHours">{{member.tuesdayStart}}-{{member.tuesdayEnd}} <br /></div>
+                            <div *ngIf="showNotes" class="notes">{{member.tuesdayNotes}}</div>
+                        </td>
+                        <td [ngClass]="dayOfWeekName === 'Wednesday' && member.working ? 'today' : ''" class="{{member.wednesdayStatus}}">
+                            <div *ngIf="showStatus">{{member.wednesdayStatus}} <br /></div>
+                            <div *ngIf="showHours">{{member.wednesdayStart}}-{{member.wednesdayEnd}} <br /></div>
+                            <div *ngIf="showNotes" class="notes">{{member.wednesdayNotes}}</div>
+                        </td>
+                        <td [ngClass]="dayOfWeekName === 'Thursday' && member.working ? 'today' : ''" class="{{member.thursdayStatus}}">
+                            <div *ngIf="showStatus">{{member.thursdayStatus}} <br /></div>
+                            <div *ngIf="showHours">{{member.thursdayStart}}-{{member.thursdayEnd}} <br /></div>
+                            <div *ngIf="showNotes" class="notes">{{member.thursdayNotes}}</div>
+                        </td>
+                        <td [ngClass]="dayOfWeekName === 'Friday' && member.working ? 'today' : ''" class="{{member.fridayStatus}}">
+                            <div *ngIf="showStatus">{{member.fridayStatus}} <br /></div>
+                            <div *ngIf="showHours">{{member.fridayStart}}-{{member.fridayEnd}} <br /></div>
+                            <div *ngIf="showNotes" class="notes">{{member.fridayNotes}}</div>
+                        </td>
+                        <td *ngIf="showWeekNotes">
+                            {{member.weekNotes}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br />
+        <div *ngIf="showMulti">
+            <h4>Multimedia</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '100'} || {'width': '50'}"></th>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Monday</th>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Tuesday</th>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Wednesday</th>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Thursday</th>
+                        <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Friday</th>
+                        <th *ngIf="showWeekNotes" class="col" width="500">Week Notes</th>
+                    </tr>
+                <tbody>
+                    <tr *ngFor="let member of multiusers">
+                        <td class="name"><a href="/editor/{{member.username}}">{{member.firstName}}</a></td>
+                        <td [ngClass]="dayOfWeekName === 'Monday' && member.working ? 'today' : ''" class="{{member.mondayStatus}}">
+                            <div *ngIf="showStatus">{{member.mondayStatus}} <br /></div>
+                            <div *ngIf="showHours">{{member.mondayStart}}-{{member.mondayEnd}} <br /></div>
+                            <div *ngIf="showNotes" class="notes">{{member.mondayNotes}}</div>
+                        </td>
+                        <td [ngClass]="dayOfWeekName === 'Tuesday' && member.working ? 'today' : ''" class="{{member.tuesdayStatus}}">
+                            <div *ngIf="showStatus">{{member.tuesdayStatus}} <br /></div>
+                            <div *ngIf="showHours">{{member.tuesdayStart}}-{{member.tuesdayEnd}} <br /></div>
+                            <div *ngIf="showNotes" class="notes">{{member.tuesdayNotes}}</div>
+                        </td>
+                        <td [ngClass]="dayOfWeekName === 'Wednesday' && member.working ? 'today' : ''" class="{{member.wednesdayStatus}}">
+                            <div *ngIf="showStatus">{{member.wednesdayStatus}} <br /></div>
+                            <div *ngIf="showHours">{{member.wednesdayStart}}-{{member.wednesdayEnd}} <br /></div>
+                            <div *ngIf="showNotes" class="notes">{{member.wednesdayNotes}}</div>
+                        </td>
+                        <td [ngClass]="dayOfWeekName === 'Thursday' && member.working ? 'today' : ''" class="{{member.thursdayStatus}}">
+                            <div *ngIf="showStatus">{{member.thursdayStatus}} <br /></div>
+                            <div *ngIf="showHours">{{member.thursdayStart}}-{{member.thursdayEnd}} <br /></div>
+                            <div *ngIf="showNotes" class="notes">{{member.thursdayNotes}}</div>
+                        </td>
+                        <td [ngClass]="dayOfWeekName === 'Friday' && member.working ? 'today' : ''" class="{{member.fridayStatus}}">
+                            <div *ngIf="showStatus">{{member.fridayStatus}} <br /></div>
+                            <div *ngIf="showHours">{{member.fridayStart}}-{{member.fridayEnd}} <br /></div>
+                            <div *ngIf="showNotes" class="notes">{{member.fridayNotes}}</div>
+                        </td>
+                        <td *ngIf="showWeekNotes">
+                            {{member.weekNotes}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <div *ngIf="showWeb">
-        <h4>Web and Development</h4>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '100'} || {'width': '50'}"></th>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Monday</th>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Tuesday</th>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Wednesday</th>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Thursday</th>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Friday</th>
-                    <th *ngIf="showWeekNotes" class="col" width="500">Week Notes</th>
-                </tr>
-            <tbody>
-                <tr *ngFor="let member of webusers">
-                    <td class="name"><a href="/editor/{{member.username}}">{{member.firstName}}</a></td>
-                    <td [ngClass]="dayOfWeekName === 'Monday' && member.working ? 'today' : ''" class="{{member.mondayStatus}}">
-                        <div *ngIf="showStatus">{{member.mondayStatus}} <br /></div>
-                        <div *ngIf="showHours">{{member.mondayStart}}-{{member.mondayEnd}} <br /></div>
-                        <div *ngIf="showNotes" class="notes">{{member.mondayNotes}}</div>
-                    </td>
-                    <td [ngClass]="dayOfWeekName === 'Tuesday' && member.working ? 'today' : ''" class="{{member.tuesdayStatus}}">
-                        <div *ngIf="showStatus">{{member.tuesdayStatus}} <br /></div>
-                        <div *ngIf="showHours">{{member.tuesdayStart}}-{{member.tuesdayEnd}} <br /></div>
-                        <div *ngIf="showNotes" class="notes">{{member.tuesdayNotes}}</div>
-                    </td>
-                    <td [ngClass]="dayOfWeekName === 'Wednesday' && member.working ? 'today' : ''" class="{{member.wednesdayStatus}}">
-                        <div *ngIf="showStatus">{{member.wednesdayStatus}} <br /></div>
-                        <div *ngIf="showHours">{{member.wednesdayStart}}-{{member.wednesdayEnd}} <br /></div>
-                        <div *ngIf="showNotes" class="notes">{{member.wednesdayNotes}}</div>
-                    </td>
-                    <td [ngClass]="dayOfWeekName === 'Thursday' && member.working ? 'today' : ''" class="{{member.thursdayStatus}}">
-                        <div *ngIf="showStatus">{{member.thursdayStatus}} <br /></div>
-                        <div *ngIf="showHours">{{member.thursdayStart}}-{{member.thursdayEnd}} <br /></div>
-                        <div *ngIf="showNotes" class="notes">{{member.thursdayNotes}}</div>
-                    </td>
-                    <td [ngClass]="dayOfWeekName === 'Friday' && member.working ? 'today' : ''" class="{{member.fridayStatus}}">
-                        <div *ngIf="showStatus">{{member.fridayStatus}} <br /></div>
-                        <div *ngIf="showHours">{{member.fridayStart}}-{{member.fridayEnd}} <br /></div>
-                        <div *ngIf="showNotes" class="notes">{{member.fridayNotes}}</div>
-                    </td>
-                    <td *ngIf="showWeekNotes">
-                        {{member.weekNotes}}
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div *ngIf="showHelpdesk">
-        <h4>Helpdesk</h4>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '100'} || {'width': '50'}"></th>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Monday</th>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Tuesday</th>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Wednesday</th>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Thursday</th>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Friday</th>
-                    <th *ngIf="showWeekNotes" class="col" width="500">Week Notes</th>
-                </tr>
-            <tbody>
-                <tr *ngFor="let member of hdusers">
-                    <td class="name"><a href="/editor/{{member.username}}">{{member.firstName}}</a></td>
-                    <td [ngClass]="dayOfWeekName === 'Monday' && member.working ? 'today' : ''" class="{{member.mondayStatus}}">
-                        <div *ngIf="showStatus">{{member.mondayStatus}} <br /></div>
-                        <div *ngIf="showHours">{{member.mondayStart}}-{{member.mondayEnd}} <br /></div>
-                        <div *ngIf="showNotes" class="notes">{{member.mondayNotes}}</div>
-                    </td>
-                    <td [ngClass]="dayOfWeekName === 'Tuesday' && member.working ? 'today' : ''" class="{{member.tuesdayStatus}}">
-                        <div *ngIf="showStatus">{{member.tuesdayStatus}} <br /></div>
-                        <div *ngIf="showHours">{{member.tuesdayStart}}-{{member.tuesdayEnd}} <br /></div>
-                        <div *ngIf="showNotes" class="notes">{{member.tuesdayNotes}}</div>
-                    </td>
-                    <td [ngClass]="dayOfWeekName === 'Wednesday' && member.working ? 'today' : ''" class="{{member.wednesdayStatus}}">
-                        <div *ngIf="showStatus">{{member.wednesdayStatus}} <br /></div>
-                        <div *ngIf="showHours">{{member.wednesdayStart}}-{{member.wednesdayEnd}} <br /></div>
-                        <div *ngIf="showNotes" class="notes">{{member.wednesdayNotes}}</div>
-                    </td>
-                    <td [ngClass]="dayOfWeekName === 'Thursday' && member.working ? 'today' : ''" class="{{member.thursdayStatus}}">
-                        <div *ngIf="showStatus">{{member.thursdayStatus}} <br /></div>
-                        <div *ngIf="showHours">{{member.thursdayStart}}-{{member.thursdayEnd}} <br /></div>
-                        <div *ngIf="showNotes" class="notes">{{member.thursdayNotes}}</div>
-                    </td>
-                    <td [ngClass]="dayOfWeekName === 'Friday' && member.working ? 'today' : ''" class="{{member.fridayStatus}}">
-                        <div *ngIf="showStatus">{{member.fridayStatus}} <br /></div>
-                        <div *ngIf="showHours">{{member.fridayStart}}-{{member.fridayEnd}} <br /></div>
-                        <div *ngIf="showNotes" class="notes">{{member.fridayNotes}}</div>
-                    </td>
-                    <td *ngIf="showWeekNotes">
-                        {{member.weekNotes}}
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div *ngIf="showMulti">
-        <h4>Multimedia</h4>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '100'} || {'width': '50'}"></th>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Monday</th>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Tuesday</th>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Wednesday</th>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Thursday</th>
-                    <th class="col" [ngStyle]="showWeekNotes && {'width': '150'} || {'width': '50'}">Friday</th>
-                    <th *ngIf="showWeekNotes" class="col" width="500">Week Notes</th>
-                </tr>
-            <tbody>
-                <tr *ngFor="let member of multiusers">
-                    <td class="name"><a href="/editor/{{member.username}}">{{member.firstName}}</a></td>
-                    <td [ngClass]="dayOfWeekName === 'Monday' && member.working ? 'today' : ''" class="{{member.mondayStatus}}">
-                        <div *ngIf="showStatus">{{member.mondayStatus}} <br /></div>
-                        <div *ngIf="showHours">{{member.mondayStart}}-{{member.mondayEnd}} <br /></div>
-                        <div *ngIf="showNotes" class="notes">{{member.mondayNotes}}</div>
-                    </td>
-                    <td [ngClass]="dayOfWeekName === 'Tuesday' && member.working ? 'today' : ''" class="{{member.tuesdayStatus}}">
-                        <div *ngIf="showStatus">{{member.tuesdayStatus}} <br /></div>
-                        <div *ngIf="showHours">{{member.tuesdayStart}}-{{member.tuesdayEnd}} <br /></div>
-                        <div *ngIf="showNotes" class="notes">{{member.tuesdayNotes}}</div>
-                    </td>
-                    <td [ngClass]="dayOfWeekName === 'Wednesday' && member.working ? 'today' : ''" class="{{member.wednesdayStatus}}">
-                        <div *ngIf="showStatus">{{member.wednesdayStatus}} <br /></div>
-                        <div *ngIf="showHours">{{member.wednesdayStart}}-{{member.wednesdayEnd}} <br /></div>
-                        <div *ngIf="showNotes" class="notes">{{member.wednesdayNotes}}</div>
-                    </td>
-                    <td [ngClass]="dayOfWeekName === 'Thursday' && member.working ? 'today' : ''" class="{{member.thursdayStatus}}">
-                        <div *ngIf="showStatus">{{member.thursdayStatus}} <br /></div>
-                        <div *ngIf="showHours">{{member.thursdayStart}}-{{member.thursdayEnd}} <br /></div>
-                        <div *ngIf="showNotes" class="notes">{{member.thursdayNotes}}</div>
-                    </td>
-                    <td [ngClass]="dayOfWeekName === 'Friday' && member.working ? 'today' : ''" class="{{member.fridayStatus}}">
-                        <div *ngIf="showStatus">{{member.fridayStatus}} <br /></div>
-                        <div *ngIf="showHours">{{member.fridayStart}}-{{member.fridayEnd}} <br /></div>
-                        <div *ngIf="showNotes" class="notes">{{member.fridayNotes}}</div>
-                    </td>
-                    <td *ngIf="showWeekNotes">
-                        {{member.weekNotes}}
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+
+    
 </div>

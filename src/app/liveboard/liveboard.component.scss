@@ -32,7 +32,7 @@
 }
 
 .table {
-    font-size: medium;
+    font-size: 120%;
     font-weight: 400;
     vertical-align: middle;
     text-align: center;
@@ -62,4 +62,9 @@ td {
     a:link { color: black; }
     a:visited { color: black; }
     background-color: red;
+}
+
+.heading {
+    text-align: center;
+    font-size: 150%;
 }
