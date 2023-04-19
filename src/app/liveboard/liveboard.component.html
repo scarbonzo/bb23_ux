@@ -61,7 +61,7 @@
                 <table class="table table-bordered">
                     <tbody>
                         <tr *ngFor="let member of coreusers">
-                            <td *ngIf="!member.working" class="out"><a href="/editor/{{member.username}}">{{member.firstName}}</a></td>
+                            <td *ngIf="!member.working" [ngClass]="member.status"><a href="/editor/{{member.username}}">{{member.firstName}}</a></td>
                         </tr>
                     </tbody>
                 </table>    

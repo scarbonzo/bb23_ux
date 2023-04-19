@@ -1,199 +1,373 @@
-<form #userForm="ngForm">
-    <div class="form-group">
-        <div class="col-3">
-            <table class="table">
-                <tbody>
-                    <tr>
-                        <td width="100" class="left">Username</td>
-                        <td width="500"><input type="text" class="form-control" id="username"
-                            required
-                            [(ngModel)]="model.username" name="username"></td>
-                    </tr>
-                    <tr>
-                        <td width="100" class="left">First Name</td>
-                        <td width="500">
-                            <input type="text" class="form-control" id="firstName"
-                            required
-                            [(ngModel)]="model.firstName" name="firstName">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width="100" class="left">Group</td>
-                        <td width="500">
-                            <select class="form-control"  id="group"
-                                required
-                                [(ngModel)]="model.group" name="group">
-                                <option *ngFor="let g of groups" [value]="g.name">{{g.name}}</option>
-                            </select>
-                        </td>
-                    </tr>
-                </tbody>
-                
-            </table>
-        </div>
-        <div class="col-6">
-            <table class="table">
-                <tr>
-                    <th width="50"></th>
-                    <th width="100">Status</th>
-                    <th width="100">Start</th>
-                    <th width="100">End</th>
-                    <th width="500">Notes</th>
-                </tr>
-                <tbody>
-                    <tr>
-                        <td class="left">
-                            Monday
-                        </td>
-                        <td>
-                            <select class="form-control {{model.mondayStatus}}"  id="mondayStatus"
-                                required
-                                [(ngModel)]="model.mondayStatus" name="mondayStatus">
-                                <option *ngFor="let s of statuses" [value]="s.name">{{s.name}}</option>
-                            </select>
-                        </td>
-                        <td>
-                            <input type="text" class="form-control" id="mondayStart"
-                            required
-                            [(ngModel)]="model.mondayStart" name="mondayStart">
-                        </td>
-                        <td>
-                            <input type="text" class="form-control" id="mondayEnd"
-                            required
-                            [(ngModel)]="model.mondayEnd" name="mondayEnd">
-                        </td>
-                        <td>
-                            <input type="text" class="form-control" id="mondayNotes"
-                            required
-                            [(ngModel)]="model.mondayNotes" name="mondayNotes">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="left">
-                            Tuesday
-                        </td>
-                        <td>
-                            <select class="form-control {{model.tuesdayStatus}}"  id="tuesdayStatus"
-                                required
-                                [(ngModel)]="model.tuesdayStatus" name="tuesdayStatus">
-                                <option *ngFor="let s of statuses" [value]="s.name">{{s.name}}</option>
-                            </select>
-                        </td>
-                        <td>
-                            <input type="text" class="form-control" id="tuesdayStart"
-                            required
-                            [(ngModel)]="model.tuesdayStart" name="tuesdayStart">
-                        </td>
-                        <td>
-                            <input type="text" class="form-control" id="tuesdayEnd"
-                            required
-                            [(ngModel)]="model.tuesdayEnd" name="tuesdayEnd">
-                        </td>
-                        <td>
-                            <input type="text" class="form-control" id="tuesdayNotes"
-                            required
-                            [(ngModel)]="model.tuesdayNotes" name="tuesdayNotes">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="left">
-                            Wednesday
-                        </td>
-                        <td>
-                            <select class="form-control {{model.wednesdayStatus}}"  id="wednesdayStatus"
-                                required
-                                [(ngModel)]="model.wednesdayStatus" name="wednesdayStatus">
-                                <option *ngFor="let s of statuses" [value]="s.name">{{s.name}}</option>
-                            </select>
-                        </td>
-                        <td>
-                            <input type="text" class="form-control" id="wednesdayStart"
-                            required
-                            [(ngModel)]="model.wednesdayStart" name="wednesdayStart">
-                        </td>
-                        <td>
-                            <input type="text" class="form-control" id="wednesdayEnd"
-                            required
-                            [(ngModel)]="model.wednesdayEnd" name="wednesdayEnd">
-                        </td>
-                        <td>
-                            <input type="text" class="form-control" id="wednesdayNotes"
-                            required
-                            [(ngModel)]="model.wednesdayNotes" name="wednesdayNotes">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="left">
-                            Thursday
-                        </td>
-                        <td>
-                            <select class="form-control {{model.thursdayStatus}}"  id="thursdayStatus"
-                                required
-                                [(ngModel)]="model.thursdayStatus" name="thursdayStatus">
-                                <option *ngFor="let s of statuses" [value]="s.name">{{s.name}}</option>
-                            </select>
-                        </td>
-                        <td>
-                            <input type="text" class="form-control" id="thursdayStart"
-                            required
-                            [(ngModel)]="model.thursdayStart" name="thursdayStart">
-                        </td>
-                        <td>
-                            <input type="text" class="form-control" id="thursdayEnd"
-                            required
-                            [(ngModel)]="model.thursdayEnd" name="thursdayEnd">
-                        </td>
-                        <td>
-                            <input type="text" class="form-control" id="thursdayNotes"
-                            required
-                            [(ngModel)]="model.thursdayNotes" name="thursdayNotes">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="left">
-                            Friday
-                        </td>
-                        <td>
-                            <select class="form-control {{model.fridayStatus}}"  id="fridayStatus"
-                                required
-                                [(ngModel)]="model.fridayStatus" name="fridayStatus">
-                                <option *ngFor="let s of statuses" [value]="s.name">{{s.name}}</option>
-                            </select>
-                        </td>
-                        <td>
-                            <input type="text" class="form-control" id="fridayStart"
-                            required
-                            [(ngModel)]="model.fridayStart" name="fridayStart">
-                        </td>
-                        <td>
-                            <input type="text" class="form-control" id="fridayEnd"
-                            required
-                            [(ngModel)]="model.fridayEnd" name="fridayEnd">
-                        </td>
-                        <td>
-                            <input type="text" class="form-control" id="fridayNotes"
-                            required
-                            [(ngModel)]="model.fridayNotes" name="fridayNotes">
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="col-6">
-                <table class="table">
-                    <tbody>
+<div *ngIf="model != null" class="row">
+    <div class="col-5 frame">
+        <h4>My Live Schedule</h4>
+        <form #userForm="ngForm">
+            <div class="form-group">
+                <div class="col-6">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td width="100" class="left">Username</td>
+                                <td width="500"><input type="text" class="form-control" id="username"
+                                    required
+                                    [(ngModel)]="model.username" name="username"></td>
+                            </tr>
+                            <tr>
+                                <td width="100" class="left">First Name</td>
+                                <td width="500">
+                                    <input type="text" class="form-control" id="firstName"
+                                    required
+                                    [(ngModel)]="model.firstName" name="firstName">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100" class="left">Group</td>
+                                <td width="500">
+                                    <select class="form-control"  id="group"
+                                        required
+                                        [(ngModel)]="model.group" name="group">
+                                        <option *ngFor="let g of groups" [value]="g.name">{{g.name}}</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
+                <div class="col-12">
+                    <table class="table">
                         <tr>
-                            <td class="left">Week Notes</td>
-                            <td>
-                                <input type="text" class="form-control" id="weekNotes"
-                                required
-                                [(ngModel)]="model.weekNotes" name="weekNotes">
-                            </td>
+                            <th width="50"></th>
+                            <th width="150">Status</th>
+                            <th width="150">Start</th>
+                            <th width="150">End</th>
+                            <th width="400">Notes</th>
                         </tr>
-                    </tbody>
-                </table>
+                        <tbody>
+                            <tr>
+                                <td class="left">
+                                    Monday
+                                </td>
+                                <td>
+                                    <select class="form-control {{model.mondayStatus}}"  id="mondayStatus"
+                                        required
+                                        [(ngModel)]="model.mondayStatus" name="mondayStatus">
+                                        <option *ngFor="let s of statuses" [value]="s.name">{{s.name}}</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="mondayStart"
+                                    required
+                                    [(ngModel)]="model.mondayStart" name="mondayStart">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="mondayEnd"
+                                    required
+                                    [(ngModel)]="model.mondayEnd" name="mondayEnd">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="mondayNotes"
+                                    [(ngModel)]="model.mondayNotes" name="mondayNotes">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">
+                                    Tuesday
+                                </td>
+                                <td>
+                                    <select class="form-control {{model.tuesdayStatus}}"  id="tuesdayStatus"
+                                        required
+                                        [(ngModel)]="model.tuesdayStatus" name="tuesdayStatus">
+                                        <option *ngFor="let s of statuses" [value]="s.name">{{s.name}}</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="tuesdayStart"
+                                    required
+                                    [(ngModel)]="model.tuesdayStart" name="tuesdayStart">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="tuesdayEnd"
+                                    required
+                                    [(ngModel)]="model.tuesdayEnd" name="tuesdayEnd">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="tuesdayNotes"
+                                    [(ngModel)]="model.tuesdayNotes" name="tuesdayNotes">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">
+                                    Wednesday
+                                </td>
+                                <td>
+                                    <select class="form-control {{model.wednesdayStatus}}"  id="wednesdayStatus"
+                                        required
+                                        [(ngModel)]="model.wednesdayStatus" name="wednesdayStatus">
+                                        <option *ngFor="let s of statuses" [value]="s.name">{{s.name}}</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="wednesdayStart"
+                                    required
+                                    [(ngModel)]="model.wednesdayStart" name="wednesdayStart">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="wednesdayEnd"
+                                    required
+                                    [(ngModel)]="model.wednesdayEnd" name="wednesdayEnd">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="wednesdayNotes"
+                                    [(ngModel)]="model.wednesdayNotes" name="wednesdayNotes">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">
+                                    Thursday
+                                </td>
+                                <td>
+                                    <select class="form-control {{model.thursdayStatus}}"  id="thursdayStatus"
+                                        required
+                                        [(ngModel)]="model.thursdayStatus" name="thursdayStatus">
+                                        <option *ngFor="let s of statuses" [value]="s.name">{{s.name}}</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="thursdayStart"
+                                    required
+                                    [(ngModel)]="model.thursdayStart" name="thursdayStart">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="thursdayEnd"
+                                    required
+                                    [(ngModel)]="model.thursdayEnd" name="thursdayEnd">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="thursdayNotes"
+                                    [(ngModel)]="model.thursdayNotes" name="thursdayNotes">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">
+                                    Friday
+                                </td>
+                                <td>
+                                    <select class="form-control {{model.fridayStatus}}"  id="fridayStatus"
+                                        required
+                                        [(ngModel)]="model.fridayStatus" name="fridayStatus">
+                                        <option *ngFor="let s of statuses" [value]="s.name">{{s.name}}</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="fridayStart"
+                                    required
+                                    [(ngModel)]="model.fridayStart" name="fridayStart">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="fridayEnd"
+                                    required
+                                    [(ngModel)]="model.fridayEnd" name="fridayEnd">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="fridayNotes"
+                                    [(ngModel)]="model.fridayNotes" name="fridayNotes">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="col-6">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td class="left">Week Notes</td>
+                                    <td>
+                                        <input type="text" class="form-control" id="weekNotes"
+                                        [(ngModel)]="model.weekNotes" name="weekNotes">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-        </div>
+            <button type="button" class="btn btn-outline-primary btn-space" (click)="updateUser()">Update User</button>
+            <button type="button" class="btn btn-outline-danger btn-space" (click)="cancel()">Cancel</button>
+            <button type="button" class="btn btn-outline-success" (click)="applyTemplate()">Apply Template</button>
+        </form>
     </div>
-    <button type="button" class="col-2 btn btn-primary" (click)="updateUser()">Update User</button>
-    <button type="button" class="col-2 btn btn-warning" (click)="cancel()">Cancel</button>
-</form>
+
+    <div class="col-5 frame">
+        <h4>My Template</h4>
+        <form #userForm="ngForm">
+            <div class="form-group">
+                <div class="col-12">
+                    <table class="table">
+                        <tr>
+                            <th width="50"></th>
+                            <th width="150">Status</th>
+                            <th width="150">Start</th>
+                            <th width="150">End</th>
+                            <th width="400">Notes</th>
+                        </tr>
+                        <tbody>
+                            <tr>
+                                <td class="left">
+                                    Monday
+                                </td>
+                                <td>
+                                    <select class="form-control {{template.mondayStatus}}"  id="templateMondayStatus"
+                                        required
+                                        [(ngModel)]="template.mondayStatus" name="templateMondayStatus">
+                                        <option *ngFor="let s of statuses" [value]="s.name">{{s.name}}</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="templateMondayStart"
+                                    required
+                                    [(ngModel)]="template.mondayStart" name="templateMondayStart">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="templateMondayEnd"
+                                    required
+                                    [(ngModel)]="template.mondayEnd" name="templateMondayEnd">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="templateMondayNotes"
+                                    [(ngModel)]="template.mondayNotes" name="templateMondayNotes">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">
+                                    Tuesday
+                                </td>
+                                <td>
+                                    <select class="form-control {{template.tuesdayStatus}}"  id="templateTuesdayStatus"
+                                        required
+                                        [(ngModel)]="template.tuesdayStatus" name="templateTuesdayStatus">
+                                        <option *ngFor="let s of statuses" [value]="s.name">{{s.name}}</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="templateTuesdayStart"
+                                    required
+                                    [(ngModel)]="template.tuesdayStart" name="tuesdayStart">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="templateTuesdayEnd"
+                                    required
+                                    [(ngModel)]="template.tuesdayEnd" name="templateTuesdayEnd">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="templateTuesdayNotes"
+                                    [(ngModel)]="template.tuesdayNotes" name="templateTuesdayNotes">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">
+                                    Wednesday
+                                </td>
+                                <td>
+                                    <select class="form-control {{template.wednesdayStatus}}"  id="templateWednesdayStatus"
+                                        required
+                                        [(ngModel)]="template.wednesdayStatus" name="templateWednesdayStatus">
+                                        <option *ngFor="let s of statuses" [value]="s.name">{{s.name}}</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="templateWednesdayStart"
+                                    required
+                                    [(ngModel)]="template.wednesdayStart" name="templateWednesdayStart">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="templateWednesdayEnd"
+                                    required
+                                    [(ngModel)]="template.wednesdayEnd" name="templateWednesdayEnd">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="templateWednesdayNotes"
+                                    [(ngModel)]="template.wednesdayNotes" name="templateWednesdayNotes">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">
+                                    Thursday
+                                </td>
+                                <td>
+                                    <select class="form-control {{template.thursdayStatus}}"  id="templateThursdayStatus"
+                                        required
+                                        [(ngModel)]="template.thursdayStatus" name="templateThursdayStatus">
+                                        <option *ngFor="let s of statuses" [value]="s.name">{{s.name}}</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="templateThursdayStart"
+                                    required
+                                    [(ngModel)]="template.thursdayStart" name="templateThursdayStart">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="templateThursdayEnd"
+                                    required
+                                    [(ngModel)]="template.thursdayEnd" name="templateThursdayEnd">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="templateThursdayNotes"
+                                    [(ngModel)]="model.thursdayNotes" name="templateThursdayNotes">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">
+                                    Friday
+                                </td>
+                                <td>
+                                    <select class="form-control {{template.fridayStatus}}"  id="templateFridayStatus"
+                                        required
+                                        [(ngModel)]="template.fridayStatus" name="templateFridayStatus">
+                                        <option *ngFor="let s of statuses" [value]="s.name">{{s.name}}</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="templateFridayStart"
+                                    required
+                                    [(ngModel)]="template.fridayStart" name="templateFridayStart">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="templateFridayEnd"
+                                    required
+                                    [(ngModel)]="template.fridayEnd" name="templateFridayEnd">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="templateFridayNotes"
+                                    [(ngModel)]="model.fridayNotes" name="templateFridayNotes">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="col-6">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td class="left">Week Notes</td>
+                                    <td>
+                                        <input type="text" class="form-control" id="templateWeekNotes"
+                                        [(ngModel)]="template.weekNotes" name="templateWeekNotes">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="left">Auto-Apply Next Week</td>
+                                    <td>
+                                        <input [(ngModel)]="template.autoApply" type="checkbox" name="autoApply"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-outline-primary btn-space" (click)="updateTemplate()">Update Template</button>
+                <button type="button" class="btn btn-outline-danger" (click)="cancelTemplate()">Undo Changes</button>
+            </div>
+        </form>
+    </div>
+</div>

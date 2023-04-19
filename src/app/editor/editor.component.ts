@@ -11,8 +11,9 @@ export class EditorComponent implements OnInit {
 
   constructor(private _router: Router, private inoutboardservice: InoutboardService, private activatedRoute: ActivatedRoute) { }
 
-  model: any;
   username = '';
+  model: any;
+  template: any;
 
   groups = [] as any;
   statuses = [] as any;
@@ -22,6 +23,10 @@ export class EditorComponent implements OnInit {
     this.inoutboardservice
       .getUser(this.username)
       .subscribe(data => {  this.model = data;
+    });
+    this.inoutboardservice
+      .getUserTemplate(this.username)
+      .subscribe(data => {  this.template = data;
     });
     this.inoutboardservice
       .getGroups()
@@ -39,6 +44,46 @@ export class EditorComponent implements OnInit {
         .subscribe();
     this._router.navigateByUrl('/board')
   }
+  updateTemplate() {
+    this.inoutboardservice
+      .updateTemplate(this.template)
+        .subscribe();
+  }
+    cancelTemplate() {
+    this.inoutboardservice
+      .getUserTemplate(this.username)
+      .subscribe(data => {  this.template = data;
+    });
+  }
+  applyTemplate() {
+    this.model.mondayStatus = this.template.mondayStatus;
+    this.model.mondayStart = this.template.mondayStart;
+    this.model.mondayEnd = this.template.mondayEnd;
+    this.model.mondayNotes = this.template.mondayNotes;
+
+    this.model.tuesdayStatus = this.template.tuesdayStatus;
+    this.model.tuesdayStart = this.template.tuesdayStart;
+    this.model.tuesdayEnd = this.template.tuesdayEnd;
+    this.model.tuesdayNotes = this.template.tuesdayNotes;
+    
+    this.model.wednesdayStatus = this.template.wednesdayStatus;
+    this.model.wednesdayStart = this.template.wednesdayStart;
+    this.model.wednesdayEnd = this.template.wednesdayEnd;
+    this.model.wednesdayNotes = this.template.wednesdayNotes;
+
+    this.model.thursdayStatus = this.template.thursdayStatus;
+    this.model.thursdayStart = this.template.thursdayStart;
+    this.model.thursdayEnd = this.template.thursdayEnd;
+    this.model.thursdayNotes = this.template.thursdayNotes;
+
+    this.model.fridayStatus = this.template.fridayStatus;
+    this.model.fridayStart = this.template.fridayStart;
+    this.model.fridayEnd = this.template.fridayEnd;
+    this.model.fridayNotes = this.template.fridayNotes;
+
+    this.model.weekNotes = this.template.weekNotes;
+  }
+
   cancel() {
     this._router.navigateByUrl('/board')
   }
