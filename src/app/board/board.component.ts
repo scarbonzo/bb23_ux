@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InoutboardService } from '../inoutboard.service';
 import { Observable, Subscription, interval } from 'rxjs';
+import { User2 } from '../user2';
 
 @Component({
   selector: 'app-board',
@@ -28,7 +29,7 @@ export class BoardComponent implements OnInit {
   showStatus = true;
   showHours = true;
   showNotes = true;
-  showWeekNotes = false;
+  showWeekNotes = true;
 
   ngOnInit() {
     this.GetUsers();
@@ -68,4 +69,12 @@ export class BoardComponent implements OnInit {
     });
   }
 
+  NameRowHeight(member: User2) {
+    if(this.showWeekNotes && member.weekNotes != '') {
+      return 2;
+    }
+    else {
+      return 1;
+    }
+  }
 }
